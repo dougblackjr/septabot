@@ -8,3 +8,9 @@ Documentation for the framework can be found on the [Lumen website](http://lumen
 
 ## SLACK WEBHOOK
 [https://api.slack.com/](https://api.slack.com/)
+
+## LARADOCK
+[http://laradock.io/getting-started/](http://laradock.io/getting-started/)
+
+## LUMEN API TUTORIAL
+[https://www.cloudways.com/blog/creating-rest-api-with-lumen/](https://www.cloudways.com/blog/creating-rest-api-with-lumen/)
