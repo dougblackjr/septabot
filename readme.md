@@ -1,9 +1,21 @@
 # SEPTA BOT
+[https://bitbucket.org/triplenerdscore/septa-bot](https://bitbucket.org/triplenerdscore/septa-bot)
+We'll build a thing that gets live SEPTA information and puts it out to Slack.
+
+##You'll Need
+A computer
+A notebook
+A pen
+
+##You'll Need Installed
+Git: Mac: `brew install git`
+Docker: [https://docs.docker.com/docker-for-mac/install/#download-docker-for-mac](https://docs.docker.com/docker-for-mac/install/#download-docker-for-mac)
 
 ## Git Repo
 You'll need to install Git.
 Mac: `brew install git`
 [https://dougblackjr@bitbucket.org/triplenerdscore/septa-bot.git](https://dougblackjr@bitbucket.org/triplenerdscore/septa-bot.git)
+First Run: [https://git-scm.com/book/en/v1/Getting-Started-First-Time-Git-Setup](https://git-scm.com/book/en/v1/Getting-Started-First-Time-Git-Setup)
 
 ## Lumen Documentation
 Documentation for the framework can be found on the [Lumen website](http://lumen.laravel.com/docs).
