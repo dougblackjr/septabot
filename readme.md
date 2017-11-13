@@ -1,5 +1,10 @@
 # SEPTA BOT
 
+## Git Repo
+You'll need to install Git.
+Mac: `brew install git`
+[https://dougblackjr@bitbucket.org/triplenerdscore/septa-bot.git](https://dougblackjr@bitbucket.org/triplenerdscore/septa-bot.git)
+
 ## Lumen Documentation
 Documentation for the framework can be found on the [Lumen website](http://lumen.laravel.com/docs).
 
