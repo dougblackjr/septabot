@@ -3,20 +3,21 @@
 
 ## We'll build a thing that gets live SEPTA information and puts it out to Slack.
 
-###You'll Need
-A computer
-A notebook
-A pen
+### You'll Need
++ A computer
++ A notebook
++ A pen
 
-###You'll Need Installed
-Git: Mac: `brew install git`
-Docker: [https://docs.docker.com/docker-for-mac/install/#download-docker-for-mac](https://docs.docker.com/docker-for-mac/install/#download-docker-for-mac)
+### You'll Need Installed
++ Git: Mac: `brew install git`
++ Docker: [https://docs.docker.com/docker-for-mac/install/#download-docker-for-mac](https://docs.docker.com/docker-for-mac/install/#download-docker-for-mac)
 
 ### Git Repo
-You'll need to install Git.
-Mac: `brew install git`
-[https://github.com/dougblackjr/septabot.git](https://github.com/dougblackjr/septabot.git)
-First Run: [https://git-scm.com/book/en/v1/Getting-Started-First-Time-Git-Setup](https://git-scm.com/book/en/v1/Getting-Started-First-Time-Git-Setup)
++ You'll need to install Git.
+    + Mac: `brew install git`
+    + First Run: [https://git-scm.com/book/en/v1/Getting-Started-First-Time-Git-Setup](https://git-scm.com/book/en/v1/Getting-Started-First-Time-Git-Setup)
++ Clone the repo
+    + [https://github.com/dougblackjr/septabot.git](https://github.com/dougblackjr/septabot.git)
 
 ### Lumen Documentation
 Documentation for the framework can be found on the [Lumen website](http://lumen.laravel.com/docs).
