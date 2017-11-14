@@ -1,33 +1,34 @@
 # SEPTA BOT
-[https://bitbucket.org/triplenerdscore/septa-bot](https://bitbucket.org/triplenerdscore/septa-bot)
-We'll build a thing that gets live SEPTA information and puts it out to Slack.
+[https://github.com/dougblackjr/septabot](https://github.com/dougblackjr/septabot)
 
-##You'll Need
+## We'll build a thing that gets live SEPTA information and puts it out to Slack.
+
+###You'll Need
 A computer
 A notebook
 A pen
 
-##You'll Need Installed
+###You'll Need Installed
 Git: Mac: `brew install git`
 Docker: [https://docs.docker.com/docker-for-mac/install/#download-docker-for-mac](https://docs.docker.com/docker-for-mac/install/#download-docker-for-mac)
 
-## Git Repo
+### Git Repo
 You'll need to install Git.
 Mac: `brew install git`
-[https://dougblackjr@bitbucket.org/triplenerdscore/septa-bot.git](https://dougblackjr@bitbucket.org/triplenerdscore/septa-bot.git)
+[https://github.com/dougblackjr/septabot.git](https://github.com/dougblackjr/septabot.git)
 First Run: [https://git-scm.com/book/en/v1/Getting-Started-First-Time-Git-Setup](https://git-scm.com/book/en/v1/Getting-Started-First-Time-Git-Setup)
 
-## Lumen Documentation
+### Lumen Documentation
 Documentation for the framework can be found on the [Lumen website](http://lumen.laravel.com/docs).
 
-## SEPTA API
+### SEPTA API
 [http://www.septastats.com/api](http://www.septastats.com/api)
 
-## SLACK WEBHOOK
+### SLACK WEBHOOK
 [https://api.slack.com/](https://api.slack.com/)
 
-## LARADOCK
+### LARADOCK
 [http://laradock.io/getting-started/](http://laradock.io/getting-started/)
 
-## LUMEN API TUTORIAL
+### LUMEN API TUTORIAL
 [https://www.cloudways.com/blog/creating-rest-api-with-lumen/](https://www.cloudways.com/blog/creating-rest-api-with-lumen/)
