@@ -18,10 +18,12 @@ This won't necessarily be best practices, but just enough to get your hands dirt
 ```
 cd septabot/example
 php -S localhost
-token:12345
-command: train
-text: Warminster!
 ```
+
+Then run a request with these parameters:
++ token: 12345
++ command: train
++ text: Warminster (or Wil or snerd)
 
 ### You'll Need
 + A computer
