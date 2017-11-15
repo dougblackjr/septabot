@@ -1,7 +1,16 @@
 # SEPTA BOT
 [https://github.com/dougblackjr/septabot](https://github.com/dougblackjr/septabot)
 
-## We'll build a thing that gets live SEPTA information and puts it out to Slack.
+## We'll build a thing that gets the next SEPTA train heading in a certain direction
+
+This is going to be a very simple implementation of the SEPTA stats API to determine which train heading outbound is coming next.
+
+We'll learn:
++ Very basic git and php stuff
++ Pseudocode
++ How to call an API and parse the data
++ How to Dump and Die!
++ How to never trust user input
 
 ### You'll Need
 + A computer
@@ -10,7 +19,8 @@
 
 ### You'll Need Installed
 + Git: Mac: `brew install git`
-+ Docker: [https://docs.docker.com/docker-for-mac/install/#download-docker-for-mac](https://docs.docker.com/docker-for-mac/install/#download-docker-for-mac)
++ Postman: [https://www.getpostman.com/docs/postman/launching_postman/installation_and_updates](https://www.getpostman.com/docs/postman/launching_postman/installation_and_updates)
+    + For testing our bot
 
 ### Git Repo
 + You'll need to install Git.
@@ -19,17 +29,8 @@
 + Clone the repo
     + [https://github.com/dougblackjr/septabot.git](https://github.com/dougblackjr/septabot.git)
 
-### Lumen Documentation
-Documentation for the framework can be found on the [Lumen website](http://lumen.laravel.com/docs).
-
 ### SEPTA API
 [http://www.septastats.com/api](http://www.septastats.com/api)
 
 ### SLACK WEBHOOK
 [https://api.slack.com/](https://api.slack.com/)
-
-### LARADOCK
-[http://laradock.io/getting-started/](http://laradock.io/getting-started/)
-
-### LUMEN API TUTORIAL
-[https://www.cloudways.com/blog/creating-rest-api-with-lumen/](https://www.cloudways.com/blog/creating-rest-api-with-lumen/)
