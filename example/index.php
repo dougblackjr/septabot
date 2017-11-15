@@ -75,11 +75,12 @@ $decoded = json_decode($resp, TRUE);
 
 $data = $decoded['data'];
 
-// Let's get a count of trains
-$finalResponse = 'I see ' . count($data) . ' trains. ';
-
 // If we got a response (the array is not null)
 if (!is_null($data)) {
+
+	// Let's get a count of trains
+	$finalResponse = 'I see ' . count($data) . ' trains. ';
+
 	// For each train
 	foreach ($data as $key => $trainArray) {
 		// Let's get the train number and destination
@@ -91,6 +92,12 @@ if (!is_null($data)) {
 		// If you wanted to add a map
 		// 'https://www.google.com/maps/place/' . $trainArray['lat'] . ' + ' . $trainArray['lon'] . '/';
 	}
+} else {
+
+	// The user couldn't find their train, or they're being sassy
+	$finalResponse = ':/ Try a real train...like:' . PHP_EOL;
+	$finalResponse .= implode(', ', $trains);
+
 }
 
 // CODE: Send back json_encoded array
