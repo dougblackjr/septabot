@@ -6,11 +6,13 @@
 This is going to be a very simple implementation of the SEPTA stats API to determine which train heading outbound is coming next.
 
 We'll learn:
-+ Very basic git and php stuff
++ Very basic git and PHP stuff
 + Pseudocode
 + How to call an API and parse the data
 + How to Dump and Die!
 + How to never trust user input
+
+This won't necessarily be best practices, but just enough to get your hands dirty in PHP.
 
 ### You'll Need
 + A computer
