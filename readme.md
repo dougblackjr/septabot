@@ -16,33 +16,32 @@ This won't necessarily be best practices, but just enough to get your hands dirt
 
 You can see a bit of what we'll do in `index.php`!
 
-### SEE IT IN ACTION
-```
-cd septabot/example
-php -S localhost
-```
-
-Then run a request with these parameters:
-+ token: 12345
-+ command: train
-+ text: Warminster (or Wil or snerd)
-
 ### You'll Need
 + A computer
 + A notebook
 + A pen
 
-### You'll Need Installed
-+ Git: Mac: `brew install git`
-+ Postman: [https://www.getpostman.com/docs/postman/launching_postman/installation_and_updates](https://www.getpostman.com/docs/postman/launching_postman/installation_and_updates)
-    + For testing our bot
+### Getting Started
+1. Download and install Git (Mac: `brew install git`)
+2. Download and install Postman: [https://www.getpostman.com/docs/postman/launching_postman/installation_and_updates](https://www.getpostman.com/docs/postman/launching_postman/installation_and_updates)
+3. Open your Terminal. We'll do some of our work here
+4. "Clone the repo" (make a copy of the base code you'll need) by running in your terminal: `git clone https://github.com/dougblackjr/septabot.git`.
+5. Type in terminal: `cd septabot/example`
+6. Start a PHP server by typing in terminal: `php -S localhost`
+7. Open Postman and do a New Request with the following parameters:
+    + URL: `http://localhost/`
+    + Request Type: POST (You'll see Get next to the URL bar)
+    + Body:
+        - token: 12345
+        - command: train
+        - text: Warminster (or Wil or snerd)
+8. Play around! Enjoy!
 
-### Git Repo
+
+### Git Resources
 + You'll need to install Git.
     + Mac: `brew install git`
     + First Run: [https://git-scm.com/book/en/v1/Getting-Started-First-Time-Git-Setup](https://git-scm.com/book/en/v1/Getting-Started-First-Time-Git-Setup)
-+ Clone the repo
-    + [https://github.com/dougblackjr/septabot.git](https://github.com/dougblackjr/septabot.git)
 
 ### SEPTA API
 [http://www.septastats.com/api](http://www.septastats.com/api)
