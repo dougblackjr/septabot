@@ -14,6 +14,12 @@ We'll learn:
 
 This won't necessarily be best practices, but just enough to get your hands dirty in PHP.
 
+### SEE IT IN ACTION
+```
+cd septabot/example
+php -S localhost
+```
+
 ### You'll Need
 + A computer
 + A notebook
