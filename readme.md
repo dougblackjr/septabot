@@ -12,7 +12,7 @@ We'll learn:
 + How to Dump and Die!
 + How to never trust user input
 
-This won't necessarily be best practices, but just enough to get your hands dirty in PHP.
+This won't necessarily be best practices, but just enough to get your hands dirty in PHP. It'll be a very bare bones minimum viable product (just enough to get the job done).
 
 ### SEE IT IN ACTION
 ```
