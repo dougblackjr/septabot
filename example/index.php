@@ -53,7 +53,7 @@ if (isset($_POST['command'])) {
 }
 // CODE: Get train key from text sent in
 // We have to do some RegEx here
-$pattern = '/' . preg_quote($text, '/') . '/';
+$pattern = '/' . preg_quote(strtolower($text), '/') . '/';
 $trainLineName = preg_grep($pattern, $trains);
 // Then we need to limit this to one train. We'll take the last one.
 $trainLineName = end($trainLineName);
@@ -80,16 +80,19 @@ $data = $decoded['data'];
 // Let's get a count of trains
 $finalResponse = 'I see ' . count($data) . ' trains. ';
 
-// For each train
-foreach ($data as $key => $trainArray) {
-	// Let's get the train number and destination
-	$finalResponse .= 'Train ' . $trainArray['id'] . '\'s ';
-	// Let's get the next stop
-	$finalResponse .= 'next stop is ' . $trainArray['nextstop'] . '. ';
-	// Let's get the lateness
-	$finalResponse .= 'It is ' . $trainArray['late'] . ' minutes late. ' . PHP_EOL;
-	// If you wanted to add a map
-	// 'https://www.google.com/maps/place/' . $trainArray['lat'] . ' + ' . $trainArray['lon'] . '/';
+// If we got a response (the array is not null)
+if (!is_null($data)) {
+	// For each train
+	foreach ($data as $key => $trainArray) {
+		// Let's get the train number and destination
+		$finalResponse .= 'Train ' . $trainArray['id'] . '\'s ';
+		// Let's get the next stop
+		$finalResponse .= 'next stop is ' . $trainArray['nextstop'] . '. ';
+		// Let's get the lateness
+		$finalResponse .= 'It is ' . $trainArray['late'] . ' minutes late. ' . PHP_EOL;
+		// If you wanted to add a map
+		// 'https://www.google.com/maps/place/' . $trainArray['lat'] . ' + ' . $trainArray['lon'] . '/';
+	}
 }
 
 // CODE: Send back json_encoded array

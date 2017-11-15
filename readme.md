@@ -18,6 +18,9 @@ This won't necessarily be best practices, but just enough to get your hands dirt
 ```
 cd septabot/example
 php -S localhost
+token:12345
+command: train
+text: Warminster!
 ```
 
 ### You'll Need
