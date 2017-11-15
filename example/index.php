@@ -88,6 +88,8 @@ foreach ($data as $key => $trainArray) {
 	$finalResponse .= 'next stop is ' . $trainArray['nextstop'] . '. ';
 	// Let's get the lateness
 	$finalResponse .= 'It is ' . $trainArray['late'] . ' minutes late. ' . PHP_EOL;
+	// If you wanted to add a map
+	// 'https://www.google.com/maps/place/' . $trainArray['lat'] . ' + ' . $trainArray['lon'] . '/';
 }
 
 // CODE: Send back json_encoded array
