@@ -48,7 +48,6 @@ if (isset($_POST['command'])) {
 	
 		die($msg);
 
-		echo $msg;
 	}
 }
 // CODE: Get train key from text sent in
