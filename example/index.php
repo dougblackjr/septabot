@@ -52,7 +52,7 @@ if (isset($_POST['command'])) {
 }
 // CODE: Get train key from text sent in
 // We have to do some RegEx here
-$pattern = '/' . preg_quote(strtolower($text), '/') . '/';
+$pattern = '/' . preg_quote(strtolower($text), '/g') . '/';
 $trainLineName = preg_grep($pattern, $trains);
 // Then we need to limit this to one train. We'll take the last one.
 $trainLineName = end($trainLineName);
