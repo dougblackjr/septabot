@@ -1,5 +1,53 @@
 <?php
 
+function getTrains() {
+
+	// Set the train lines
+	$ch = curl_init();
+
+	curl_setopt_array($ch, array(
+			CURLOPT_RETURNTRANSFER => 1,
+			CURLOPT_URL => 'http://www.septastats.com/api/current/lines'
+		)
+	);
+
+	$resp = curl_exec($ch);
+
+	if(curl_errno($ch)) {
+		
+		die('CURL ERROR: ' . curl_errno($ch));
+
+	}
+
+	curl_close($ch);
+
+	$decoded = json_decode($resp, TRUE);
+
+	return $decoded;
+
+}
+
+function checkTrainNames($text, $trains) {
+
+	$possibleTrains = array();
+
+	foreach ($trains as $key => $value) {
+		
+		if (stripos(strtolower($value), strtolower($text)) !== FALSE) {
+		    
+		    $possibleTrains[] = $key;
+		
+		}
+
+	}
+
+	return $possibleTrains;
+
+}
+
+
+
+
 // Clear the variables we'll use
 $trainName = '';
 $response = array(
@@ -8,28 +56,10 @@ $response = array(
 );
 $finalResponse = '';
 
-// Set the train lines
-$ch = curl_init();
-
-curl_setopt_array($ch, array(
-		CURLOPT_RETURNTRANSFER => 1,
-		CURLOPT_URL => 'http://www.septastats.com/api/current/lines'
-	)
-);
-
-$resp = curl_exec($ch);
-
-if(curl_errno($ch)) {
-	
-	die('CURL ERROR: ' . curl_errno($ch));
-
-}
-
-curl_close($ch);
-
-$decoded = json_decode($resp, TRUE);
+$decoded = getTrains();
 
 $allTrains = $decoded['data'];
+// var_dump($allTrains);die();
 
 // Get input from user
 if (isset($_POST['command'])) {
@@ -40,6 +70,11 @@ if (isset($_POST['command'])) {
 
 		$response['text'] = implode(' - ', $allTrains);
 
+	} else {
+		// Is it a train name?
+		$trainName = checkTrainNames($text, $allTrains);
+
+		$response['text'] = $trainName;
 	}
 
 
