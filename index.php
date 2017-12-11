@@ -7,7 +7,36 @@ function getTrains() {
 
 	curl_setopt_array($ch, array(
 			CURLOPT_RETURNTRANSFER => 1,
-			CURLOPT_URL => 'http://www.septastats.com/api/current/lines'
+			CURLOPT_URL => 'http://www.septastats.com/api/current/stations'
+		)
+	);
+
+	$resp = curl_exec($ch);
+
+	if(curl_errno($ch)) {
+		
+		die('CURL ERROR: ' . curl_errno($ch));
+
+	}
+
+	curl_close($ch);
+
+	$decoded = json_decode($resp, TRUE);
+
+	return $decoded;
+
+}
+
+function getStationData($stationName) {
+
+	$name = rawurlencode($stationName);
+
+	// Get train info from station name
+	$ch = curl_init();
+
+	curl_setopt_array($ch, array(
+			CURLOPT_RETURNTRANSFER => 1,
+			CURLOPT_URL => 'http://www3.septa.org/hackathon/NextToArrive/Jefferson%20Station/' . $name
 		)
 	);
 
@@ -71,30 +100,37 @@ if (isset($_POST['command'])) {
 		$response['text'] = implode(' - ', $allTrains);
 
 	} else {
-		// Is it a train name?
-		$trainName = checkTrainNames($text, $allTrains);
+		
+		// Check if string is in list of stations
+		$possibleStations = checkTrainNames($text, $allTrains);
+		// If it is exact
+		if(in_array($text, $possibleStations)) {
+			// Get getStationData
+			
+		} else {
+			// Else
+			// Did you mean....list of possible stations
+			$listOfStations = implode(' - ', $possibleStations);
 
-		$response['text'] = $trainName;
+			$finalResponse = 'Did you mean...' . $listOfStations;
+		}
+		
+		// Set response text
+
+
+
+
+
+
+		// $trainInfo = getStationData($text);
+
+		$response['text'] = $finalResponse;
 	}
 
 
 }
 
 echo json_encode($response);
-
-// Get train key from text sent in
-
-// Call SeptaStats API using cURL
-
-// Create reply
-
-// If we got a response (the array is not null)
-	// Let's get a count of trains
-// Else
-	// The user couldn't find their train, or they're being sassy
-
-
-// Send back json_encoded array
 
 // Flush the object
 
