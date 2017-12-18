@@ -105,33 +105,83 @@ if (isset($_POST['command'])) {
 		$possibleStations = checkTrainNames($text, $allTrains);
 		// If it is exact
 		if(in_array($text, $possibleStations)) {
-			// Get getStationData
+			
+			// Get Station Data into response
+			$stationData = getStationData($text);
+
+			// Give count of trains
+			$finalResponse .= "Here are the next trains from Jefferson Station to {$text}:" . PHP_EOL;
+
+			// Loop through first two
+			for ($i = 0; $i < 2; $i++) { 
+				// What line it is?
+				$finalResponse .= 'I see a ' . $stationData[$i]['orig_line'] . ' train ';
+				// Next time train is departing Jefferson
+				$finalResponse .= 'departing at ' . $stationData[$i]['orig_departure_time'] . ' ';
+				// Arrival time at destination
+				$finalResponse .= "and arriving to {$text} around " . $stationData[$i]['orig_arrival_time'] . '. ';
+				// Is it late?
+				if($stationData[$i]['orig_delay'] == 'On time') {
+					
+					$finalResponse .= 'It is on time!';
+
+					if($i == 0) {
+						
+						$finalResponse .= PHP_EOL;
+
+					} else {
+
+						$finalResponse .= ':fire_septa::fire_septa::fire_septa:';
+
+					}
+
+				} else {
+
+					$finalResponse .= 'It is currently ' . $stationData[$i]['orig_delay'] . ' late.' . PHP_EOL;
+
+				}
+				
+			}
 			
 		} else {
 			// Else
 			// Did you mean....list of possible stations
-			$listOfStations = implode(' - ', $possibleStations);
+			if(empty($possibleStations)) {
 
-			$finalResponse = 'Did you mean...' . $listOfStations;
+				$finalResponse = 'Learn how to use a computer. :fire_septa:';
+
+			} elseif(count($possibleStations) > 10) {
+
+				$finalResponse = 'Too many results. Go Google it (or try a different search)';
+
+			} else {
+
+				$listOfStations = implode(' - ', $possibleStations);
+
+				$finalResponse = 'Did you mean...' . $listOfStations;
+
+			}
+
 		}
 		
 		// Set response text
-
-
-
-
-
-
-		// $trainInfo = getStationData($text);
-
 		$response['text'] = $finalResponse;
 	}
 
 
 }
 
-echo json_encode($response);
-
 // Flush the object
-
+// This looks confusing but is necessary for Slack to see it
+ignore_user_abort(true);
+set_time_limit(0);
+ob_start();
+// do initial processing here
+echo json_encode($response); // send the response
+header('Connection: close');
+header("Content-Type: application/json");
+header('Content-Length: '.ob_get_length());
+ob_end_flush();
+ob_flush();
+flush();
 // Enjoy!
